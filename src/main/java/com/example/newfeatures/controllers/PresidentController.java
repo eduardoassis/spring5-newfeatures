@@ -1,5 +1,6 @@
-package com.example.newfeatures;
+package com.example.newfeatures.controllers;
 
+import com.example.newfeatures.President;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
