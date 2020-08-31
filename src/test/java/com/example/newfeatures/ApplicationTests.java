@@ -10,6 +10,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
@@ -28,7 +29,9 @@ class ApplicationTests {
 		mockMvc.perform(post("/presidents")
 				.content(mapper.writeValueAsString(president))
 				.contentType(MediaType.APPLICATION_JSON)
-		).andExpect(status().isOk());
+		)
+				.andDo(print())
+				.andExpect(status().isOk());
 
 	}
 }
